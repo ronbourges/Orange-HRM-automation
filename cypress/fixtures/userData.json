@@ -1,0 +1,11 @@
+
+ {
+     "passes": {
+       "usernameInput" : "Admin",
+       "passwordInput" : "admin123"
+     },  
+     "fails": {
+       "usernameInput" : "test",
+       "passwordInput" : "test"
+     }
+    }
