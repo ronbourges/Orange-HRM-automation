@@ -10,9 +10,9 @@ describe('OrangeHRM', () => {
     errorMessage: '.oxd-alert-content-text'
 
    }
-   
+
     it('passes', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit('/auth/login')
     cy.get(selecctorList.usernameInput).type(userData.passes.usernameInput)
     cy.get(selecctorList.passwordInput).type(userData.passes.passwordInput)
     cy.get(selecctorList.submitButton).click()
@@ -20,7 +20,7 @@ describe('OrangeHRM', () => {
   })
 
   it('fails', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit('/auth/login')
     
     cy.get(selecctorList.usernameInput).type(userData.fails.usernameInput)
     cy.get(selecctorList.passwordInput).type(userData.fails.passwordInput)
