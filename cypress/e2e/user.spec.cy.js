@@ -1,20 +1,18 @@
 import userData from '../fixtures/userData.json'
 import LoginPage from '../pages/loginPage.js'
+import DashboardPage from '../pages/dashboardPage.js'
 
 const loginPage = new LoginPage()
-  
+ const dashboardPage = new DashboardPage() 
 
 describe('OrangeHRM', () => {
 
-   const selecctorList = {
-      myInfoButton: "[href='/web/index.php/pim/viewMyDetails']"
-   }
-
-    it('passes', () => {
-    loginPage.accessLoginPage()
-    loginPage.loginWithUser(userData.passes.usernameInput, userData.passes.passwordInput)
-       cy.url().should('include', '/dashboard')
-    cy.get(selecctorList.myInfoButton).click()
+  it('passes', () => {
+  loginPage.accessLoginPage()
+  loginPage.loginWithUser(userData.passes.usernameInput, userData.passes.passwordInput)
+     cy.url().should('include', '/dashboard')
+  dashboardPage.checkDashboardUrl()
+  dashboardPage.clickMyInfo()
   })
 
   it('fails', () => {
